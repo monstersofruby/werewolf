@@ -2,7 +2,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'sequel'
-require 'markaby_for_sinatra'
+require 'lib/markaby_for_sinatra'
 
 get '/stylesheets/:filename.css' do
   content_type 'text/css', :charset => 'utf-8'
@@ -11,4 +11,4 @@ end
 
 get '/' do
   markaby :index
-end
+en
