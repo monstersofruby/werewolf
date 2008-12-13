@@ -6,15 +6,15 @@ require 'lib/markaby_for_sinatra'
 
 
 configure do
-  Sequel.connect('sqlite://db/teamwolf.db')
+  Sequel.connect('sqlite://db/teenwolf.db')
 end
 
 configure :test do
-  Sequel.connect('sqlite://db/teamwolf_test.db')
+  Sequel.connect('sqlite://db/teenwolf_test.db')
 end
 
 require 'db/link'
-require 'db/comment'
+require 'db/comment'3
 
 get '/stylesheets/:filename.css' do
   content_type 'text/css', :charset => 'utf-8'
