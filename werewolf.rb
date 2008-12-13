@@ -40,3 +40,8 @@ get '/links/:id' do
   @link = Link[params[:id]]
   markaby :show
 end
+
+post '/links/:link_id/comments' do
+  Comment.create(params)
+  redirect "/links/#{params[:link_id]}"
+end

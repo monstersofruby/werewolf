@@ -13,16 +13,14 @@ BDs.each{|database|
       column :title, :string
       column :url, :string
       column :description, :text
-      column :created_at, :datetime
       column :votes, :integer, :default=>0
   end
 
-  database.create_table :commets do 
+  database.create_table :comments do 
       primary_key :id
       column :author, :string
       column :body, :text
       column :link_id, :integer
-      column :created_at, :datetime
   end
 
 }
