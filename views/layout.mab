@@ -1,21 +1,30 @@
 xhtml_strict do
   head do
     title "Werewolf"
-    meta "http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"
     link :rel => "stylesheet", :href=>"/stylesheets/screen.css", :type=>"text/css", :media => "screen, projection", :charset => "utf-8"
   end
 
   body do
-    div.header do
-      p 'header'
-    end
-    
-    div.content do
-      yield
-    end
-    
-    div.footer do
-      p 'footer'
+    div.container do
+      div.header do
+        p '
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        '
+      end
+      
+      div.content do
+        div.sidebar do
+          "hello"
+        end
+        
+        div.main do
+          yield
+        end
+      end
+      
+      div.footer do
+        p 'footer'
+      end
     end
   end
 end
