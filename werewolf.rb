@@ -4,6 +4,6 @@ require 'sinatra'
 require 'sequel'
 
 get '/' do
-  sass :styles
+  sass :screen
   'Homepage'
 end
