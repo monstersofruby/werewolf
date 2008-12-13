@@ -5,7 +5,7 @@ div :id => 'link' do
   p @link.description
   
   div :id => 'comments' do
-    h4 "Comments"
+    h4 "Some people is saying..."
     @link.comments.each do |comment|
       div :class => "comment" do
         h6 "#{comment.author} said"

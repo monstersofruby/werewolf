@@ -8,7 +8,9 @@ xhtml_strict do
   body do
     div.container do
       div.header do
-        img :src => '/images/header.jpg'
+        a :href => '/' do
+          img :src => '/images/header.jpg'
+        end
       end
       
       div.content do
