@@ -5,5 +5,5 @@ require 'sequel'
 
 get '/' do
   sass :screen
-  'Homepage'
+  markaby :index
 end
