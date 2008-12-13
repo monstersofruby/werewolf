@@ -6,11 +6,11 @@ require 'lib/markaby_for_sinatra'
 
 
 configure do
-  Sequel.connect('sqlite://db/teamwolf.db')
+  Sequel.connect('sqlite://db/teenwolf.db')
 end
 
 configure :test do
-  Sequel.connect('sqlite://db/teamwolf_test.db')
+  Sequel.connect('sqlite://db/teenwolf_test.db')
 end
 
 require 'db/link'
@@ -22,6 +22,7 @@ get '/stylesheets/:filename.css' do
 end
 
 get '/' do
+  @links = Link.all
   markaby :index
 end
 
@@ -31,6 +32,11 @@ get '/links/new' do
 end
 
 post '/links' do
-  Link.create(params)
-  redirect '/'
+  @link = Link.create(params)
+  redirect "/links/#{@link.id}"
+end
+
+get '/links/:id' do
+  @link = Link[params[:id]]
+  markaby :show
 end

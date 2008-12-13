@@ -1,1 +1,8 @@
-p 'hello from the index'
+div :id => 'links' do
+  @links.each do |link|
+    div :class => 'link' do
+      p { a link.title, :href => "/links/#{link.id}" }
+      p link.description
+    end
+  end
+end
