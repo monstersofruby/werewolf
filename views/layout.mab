@@ -15,7 +15,7 @@ xhtml_strict do
       
       div.content do
         div.sidebar do
-          a "Send a new link", :href => "/links/new"
+          p { a "Send a new link", :href => "/links/new" }
         end
         
         div.main do

@@ -3,6 +3,10 @@ div :id => 'link' do
     a @link.title, :href => @link.url
   end
   p @link.description
+   p :id=>"votes_#{@link.id}" do
+      "total votes: #{@link.votes}"
+    end
+  p { a "vote for this link!", :onclick=>"new Request.HTML({url:'/links/#{@link.id}/votes', update:'votes_#{@link.id}'}).post()" }
   
   div :id => 'comments' do
     h4 "Some people is saying..."
@@ -29,6 +33,7 @@ div :id => 'link' do
         end
         p { input :value => "OK", :type => 'submit' }
       end
+
     end
   end  
 end

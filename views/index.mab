@@ -8,8 +8,10 @@ div :id => 'links' do
       end
       
       h5 do
-        a "Vote!", :href => "/votes/#{link.id}" 
-        text " Total votes: #{link.votes}"
+        a "Vote!", :href => "#", :onclick => "new Request.HTML({url:'/links/#{link.id}/votes', update:'votes_#{link.id}'}).post()"
+        span :id => "votes_#{link.id}" do
+          " Total votes: #{link.votes}"
+        end
       end
       p link.description
     end

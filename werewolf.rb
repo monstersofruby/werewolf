@@ -41,9 +41,10 @@ get '/links/:id' do
   markaby :show
 end
 
-get '/votes/:link_id' do
-  Link[params[:link_id]].vote!
-  redirect "/"
+post '/links/:link_id/votes' do
+  @link=Link[params[:link_id]]
+  @link.vote!
+  markaby :create_vote, :layout=>false
 end
 
 post '/links/:link_id/comments' do

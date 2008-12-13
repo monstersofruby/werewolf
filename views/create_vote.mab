@@ -1,0 +1,1 @@
+" Total votes: #{@link.votes}"
