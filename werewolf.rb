@@ -3,11 +3,18 @@ require 'rubygems'
 require 'sinatra'
 require 'sequel'
 require 'lib/markaby_for_sinatra'
-require 'db/link'
+
 
 configure do
-  DB=Sequel.connect('sqlite://db/teamwolf.db')
+  Sequel.connect('sqlite://db/teamwolf.db')
 end
+
+configure :test do
+  Sequel.connect('sqlite://db/teamwolf_test.db')
+end
+
+require 'db/link'
+require 'db/comment'
 
 get '/stylesheets/:filename.css' do
   content_type 'text/css', :charset => 'utf-8'

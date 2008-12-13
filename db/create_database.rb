@@ -2,20 +2,29 @@ require 'rubygems'
 require 'sequel'
 
 DB = Sequel.sqlite('./teamwolf.db') 
+DB_test = Sequel.sqlite('./teamwolf_test.db') 
 
-DB.create_table :links do 
-    primary_key :id
-    column :title, :string
-    column :url, :string
-    column :description, :text
-    column :created_at, :datetime
-    column :votes, :integer, :default=>0
-end
+BDs=[DB, DB_test]
 
-DB.create_table :commets do 
-    primary_key :id
-    column :author, :string
-    column :body, :text
-    column :link_id, :integer
-    column :created_at, :datetime
-end
+BDs.each{|database|
+
+  database.create_table :links do 
+      primary_key :id
+      column :title, :string
+      column :url, :string
+      column :description, :text
+      column :created_at, :datetime
+      column :votes, :integer, :default=>0
+  end
+
+  database.create_table :commets do 
+      primary_key :id
+      column :author, :string
+      column :body, :text
+      column :link_id, :integer
+      column :created_at, :datetime
+  end
+
+}
+
+
