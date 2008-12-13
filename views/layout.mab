@@ -2,6 +2,7 @@ xhtml_strict do
   head do
     title "Werewolf"
     link :rel => "stylesheet", :href=>"/stylesheets/screen.css", :type=>"text/css", :media => "screen, projection", :charset => "utf-8"
+    script :src => "/javascripts/mootools.js", :type => "text/javascript"
   end
 
   body do
