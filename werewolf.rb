@@ -22,6 +22,7 @@ get '/stylesheets/:filename.css' do
 end
 
 get '/' do
+  @links = Link.all
   markaby :index
 end
 
