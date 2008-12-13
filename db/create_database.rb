@@ -1,8 +1,8 @@
 require 'rubygems'
 require 'sequel'
 
-DB = Sequel.sqlite('./teamwolf.db') 
-DB_test = Sequel.sqlite('./teamwolf_test.db') 
+DB = Sequel.sqlite('./teenwolf.db') 
+DB_test = Sequel.sqlite('./teenwolf_test.db') 
 
 BDs=[DB, DB_test]
 
