@@ -17,7 +17,9 @@ xhtml_strict do
         
         div.main do
           h3 'We want your vote, dude'
-          yield
+          div.votes do
+            yield
+          end
         end
       end
       
