@@ -1,27 +1,34 @@
 div :id => 'link' do
-  h2 do
+  h3 do
     a @link.title, :href => @link.url
   end
   p @link.description
   
   div :id => 'comments' do
-    h3 "Comments"
+    h4 "Comments"
     @link.comments.each do |comment|
       div :class => "comment" do
-        p "#{comment.author} said:"
+        h6 "#{comment.author} said"
         p comment.body
       end
     end
-    form :action => "/links/#{@link.id}/comments", :method => :post do
-      p do
-        label "Author", :for => "author"
-        input :type => 'text', :name => "author"        
+    
+    div :id => 'new_comment' do
+      h4 'New comment'
+      
+      form :action => "/links/#{@link.id}/comments", :method => :post do
+        p do
+          label "Your name", :for => "author"
+          br
+          input :type => 'text', :name => "author"        
+        end
+        p do
+          label "Comment", :for => "body"
+          br
+          textarea :name => "body"        
+        end
+        p { input :value => "OK", :type => 'submit' }
       end
-      p do
-        label "body", :for => "body"
-        textarea :name => "body"        
-      end
-      p { input :value => "OK", :type => 'submit' }
     end
   end  
 end

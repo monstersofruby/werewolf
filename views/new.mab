@@ -1,23 +1,27 @@
-form :action => '/links', :method => :post do
-  p do
-    label 'Title', :for => 'title'
-    br
-    input :type => 'text', :name =>'title'
-  end
-
-  p do
-    label 'URL', :for => 'url'
-    br
-    input :type => 'text', :name => 'url'
-  end
-
-  p do
-    label 'Description', :for => 'description'
-    br
-    input :type => 'text', :name => 'description'
-  end
+div.new_link do
+  h3 'Add your link'
   
-  p do
-    input :value => "OK", :type => "submit"
+  form :action => '/links', :method => :post do
+    p do
+      label 'Title', :for => 'title'
+      br
+      input :type => 'text', :name =>'title'
+    end
+  
+    p do
+      label 'URL', :for => 'url'
+      br
+      input :type => 'text', :name => 'url'
+    end
+  
+    p do
+      label 'Description', :for => 'description'
+      br
+      input :type => 'text', :name => 'description'
+    end
+    
+    p do
+      input :value => "OK", :type => "submit"
+    end
   end
 end
