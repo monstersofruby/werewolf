@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+html do
+  head do
+    title "Werewolf"
+    stylesheet_link_tag 'screen'
+  end
+
+  body do
+    div.content do
+      h1 'Title of the page'
+      p 'Lorem ipsum'
+      self << content_for_layout
+    end
+  end
+end
