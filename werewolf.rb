@@ -40,3 +40,8 @@ get '/links/:id' do
   @link = Link[params[:id]]
   markaby :show
 end
+
+get '/votes/:link_id' do
+  Link[params[:link_id]].vote!
+  redirect "/"
+end
