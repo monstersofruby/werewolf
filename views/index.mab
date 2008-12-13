@@ -1,17 +1,1 @@
-#!/usr/bin/env ruby
-
-html do
-  head do
-    
-    title "Werewolf"
-    meta "http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"
-    link :rel => "stylesheet", :href=>"/stylesheets/screen.css", :type=>"text/css", :media => "screen, projection", :charset => "utf-8"
-  end
-
-  body do
-    div.content do
-      h1 'Fear us!'
-      p "team.name => 'werewolfs' ? 'hey!' : 'pringaos'"
-    end
-  end
-end
+p 'hello from the index'

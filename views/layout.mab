@@ -1,0 +1,21 @@
+xhtml_strict do
+  head do
+    title "Werewolf"
+    meta "http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"
+    link :rel => "stylesheet", :href=>"/stylesheets/screen.css", :type=>"text/css", :media => "screen, projection", :charset => "utf-8"
+  end
+
+  body do
+    div.header do
+      p 'header'
+    end
+    
+    div.content do
+      yield
+    end
+    
+    div.footer do
+      p 'footer'
+    end
+  end
+end
