@@ -9,8 +9,8 @@ html do
 
   body do
     div.content do
-      h1 'Title of the page'
-      p 'Lorem ipsum'
+      h1 'Fear us!'
+      p "team.name == 'werewolfs' ? 'hey!' : 'pringaos'"
       self << content_for_layout
     end
   end
