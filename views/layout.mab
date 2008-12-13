@@ -12,17 +12,18 @@ xhtml_strict do
       
       div.content do
         div.sidebar do
-          "hello"
+          "New link"
         end
         
         div.main do
+          h3 'We want your vote, dude'
           yield
         end
       end
       
       div.footer do
         p do
-          'Made for'
+          text 'Made for '
           a 'Monsters of Ruby', :href => 'http://github.com/monstersofruby'
         end
       end
