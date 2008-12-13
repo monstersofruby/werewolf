@@ -13,7 +13,7 @@ xhtml_strict do
       
       div.content do
         div.sidebar do
-          "New link"
+          a "Send a new link", :href => "/links/new"
         end
         
         div.main do
