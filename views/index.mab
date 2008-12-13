@@ -1,7 +1,7 @@
 div :id => 'links' do
   @links.each do |link|
     div :class => 'link' do
-      p { a link.title, :href => link.url }
+      p { a link.title, :href => "/links/#{link.id}" }
       p link.description
     end
   end

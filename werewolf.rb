@@ -14,7 +14,7 @@ configure :test do
 end
 
 require 'db/link'
-require 'db/comment'3
+require 'db/comment'
 
 get '/stylesheets/:filename.css' do
   content_type 'text/css', :charset => 'utf-8'
@@ -32,6 +32,11 @@ get '/links/new' do
 end
 
 post '/links' do
-  Link.create(params)
-  redirect '/'
+  @link = Link.create(params)
+  redirect "/links/#{@link.id}"
+end
+
+get '/links/:id' do
+  @link = Link[params[:id]]
+  markaby :show
 end

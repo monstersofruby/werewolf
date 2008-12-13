@@ -1,0 +1,6 @@
+div :id => 'link' do
+  h2 do
+    a @link.title, :href => @link.url
+  end
+  p @link.description  
+end
