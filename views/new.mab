@@ -1,0 +1,17 @@
+form :action => '/links', :method => :post do
+  p do
+    label 'Title', :for => 'link_title'
+    input :type => 'text', :name => 'link[title]'    
+  end
+  p do
+    label 'URL', :for => 'link_url'
+    input :type => 'text', :name => 'link[url]'    
+  end
+  p do
+    label 'Description', :for => 'link_description'
+    input :type => 'text', :name => 'link[title]'    
+  end
+  p do
+    input :value => "OK", :type => "submit"
+  end
+end
