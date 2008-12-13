@@ -41,9 +41,10 @@ get '/links/:id' do
   markaby :show
 end
 
-post '/votes' do
-  @link=Link[params[:link_id]].vote!
-  markaby :create_vote
+post '/links/:link_id/votes' do
+  @link=Link[params[:link_id]]
+  @link.vote!
+  markaby :create_vote, :layout=>false
 end
 
 post '/links/:link_id/comments' do

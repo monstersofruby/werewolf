@@ -1,1 +1,1 @@
-"total votes: #{link.votes}"
+"total votes: #{@link.votes}"
