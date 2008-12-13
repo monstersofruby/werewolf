@@ -4,7 +4,7 @@ div :id => 'links' do
       p { a link.title, :href => "/links/#{link.id}" }
       p link.description
       p {"total votes: #{link.votes}"}
-      p { a link.title, :href => "/votes/#{link.id}" }
+      p { a "vote my ball dude!", :href => "/votes/#{link.id}" }
     end
   end
 end
