@@ -3,8 +3,8 @@ div :id => 'links' do
     div :class => 'link' do
       p { a link.title, :href => "/links/#{link.id}" }
       p link.description
-      p {"total votes: #{link.votes}"}
-      p { a "vote my ball dude!", :href => "/votes/#{link.id}" }
+      p {"total votes: #{link.votes}", id=>"votes_#{link.id}"}
+      p { a "vote my ball dude!", :href => "?", :onclick=>"new Request.HTML({url:'/votes', update:'votes_#{link.id}'}).post('link_id=#{link.id}')" }
     end
   end
 end
