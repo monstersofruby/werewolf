@@ -1,10 +1,17 @@
 div :id => 'links' do
   @links.each do |link|
     div :class => 'link' do
-      p { a link.title, :href => "/links/#{link.id}" }
+      h3 do
+        a :href => "/links/#{link.id}" do
+          link.title
+        end
+      end
+      
+      h5 do
+        a "Vote!", :href => "/votes/#{link.id}" 
+        text " Total votes: #{link.votes}"
+      end
       p link.description
-      p {"total votes: #{link.votes}"}
-      p { a "vote my ball dude!", :href => "/votes/#{link.id}" }
     end
   end
 end
