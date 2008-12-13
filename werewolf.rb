@@ -22,7 +22,7 @@ get '/stylesheets/:filename.css' do
 end
 
 get '/' do
-  @links = Link.all
+  @links = Link.order(:votes.desc).all
   markaby :index
 end
 
