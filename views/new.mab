@@ -1,15 +1,15 @@
 form :action => '/links', :method => :post do
   p do
-    label 'Title', :for => 'link_title'
-    input :type => 'text', :name => 'link[title]'    
+    label 'Title', :for => 'title'
+    input :type => 'text', :name =>'title'    
   end
   p do
-    label 'URL', :for => 'link_url'
-    input :type => 'text', :name => 'link[url]'    
+    label 'URL', :for => 'url'
+    input :type => 'text', :name => 'url'    
   end
   p do
-    label 'Description', :for => 'link_description'
-    input :type => 'text', :name => 'link[title]'    
+    label 'Description', :for => 'description'
+    input :type => 'text', :name => 'description'    
   end
   p do
     input :value => "OK", :type => "submit"

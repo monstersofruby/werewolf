@@ -5,6 +5,10 @@ require 'sequel'
 require 'lib/markaby_for_sinatra'
 require 'db/link'
 
+configure do
+  DB=Sequel.connect('sqlite://db/teamwolf.db')
+end
+
 get '/stylesheets/:filename.css' do
   content_type 'text/css', :charset => 'utf-8'
   sass params[:filename].to_sym
@@ -17,4 +21,9 @@ end
 get '/links/new' do
   @link = Link.new
   markaby :new
+end
+
+post '/links' do
+  Link.create(params)
+  redirect '/'
 end
