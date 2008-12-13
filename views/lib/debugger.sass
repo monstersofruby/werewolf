@@ -1,0 +1,50 @@
+table#imgtest th, table#imgtest td
+  text-align: center
+  padding: 5px
+
+table#imgtest tbody th
+  text-align: right
+
+table#imgtest img
+  width: 25px
+  height: 25px
+
+div:empty, span:empty, li:empty, p:empty, td:empty, th:empty
+  padding: 0.5em
+  background: yellow 
+
+*[style], img, a[href], font, center
+  outline: 1px solid red
+
+table, th
+  border: 1px solid red
+
+img[alt][title]
+  outline-width: 0
+
+img[alt]
+  outline-color: fuchsia
+
+img[alt], img[title]
+  outline-style: double
+
+img[alt=""][title], img[alt][title=""]
+  outline-width: 3px
+
+img[alt=""][title=""]
+  outline-style: dotted
+
+a[title]
+  outline-width: 0 
+
+a[title=""]
+  outline-width: 3px 
+
+a[href="#"]
+  background: lime
+
+a[href=""]
+  background: fuchsia
+
+table[summary], th[scope="col"], th[scope="row"]
+  border: 1px solid #AAA

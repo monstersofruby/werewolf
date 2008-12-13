@@ -3,9 +3,6 @@ require 'rubygems'
 require 'sinatra'
 
 get '/' do
+  sass :styles
   'Homepage'
-end
-
-get '/new' do
-  ''
 end
