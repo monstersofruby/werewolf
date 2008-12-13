@@ -8,7 +8,9 @@ xhtml_strict do
   body do
     div.container do
       div.header do
-        img :src => '/images/header.jpg'
+        a :href => '/' do
+          img :src => '/images/header.jpg'
+        end
       end
       
       div.content do
@@ -19,10 +21,7 @@ xhtml_strict do
         end
         
         div.main do
-          h3 'We want your vote, dude'
-          div.votes do
-            yield
-          end
+          yield
         end
       end
       
