@@ -2,5 +2,26 @@ div :id => 'link' do
   h2 do
     a @link.title, :href => @link.url
   end
-  p @link.description  
+  p @link.description
+  
+  div :id => 'comments' do
+    h3 "Comments"
+    @link.comments.each do |comment|
+      div :class => "comment" do
+        p "#{comment.author} said:"
+        p comment.body
+      end
+    end
+    form :action => "/links/#{@link.id}/comments", :method => :post do
+      p do
+        label "Author", :for => "author"
+        input :type => 'text', :name => "author"        
+      end
+      p do
+        label "body", :for => "body"
+        textarea :name => "body"        
+      end
+      p { input :value => "OK", :type => 'submit' }
+    end
+  end  
 end

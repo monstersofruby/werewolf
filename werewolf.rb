@@ -45,3 +45,8 @@ get '/votes/:link_id' do
   Link[params[:link_id]].vote!
   redirect "/"
 end
+
+post '/links/:link_id/comments' do
+  Comment.create(params)
+  redirect "/links/#{params[:link_id]}"
+end

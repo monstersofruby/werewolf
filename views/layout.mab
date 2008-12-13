@@ -7,9 +7,7 @@ xhtml_strict do
   body do
     div.container do
       div.header do
-        p '
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        '
+        img :src => '/images/header.jpg'
       end
       
       div.content do
@@ -23,7 +21,10 @@ xhtml_strict do
       end
       
       div.footer do
-        p 'footer'
+        p do
+          'Made for'
+          a 'Monsters of Ruby', :href => 'http://github.com/monstersofruby'
+        end
       end
     end
   end
